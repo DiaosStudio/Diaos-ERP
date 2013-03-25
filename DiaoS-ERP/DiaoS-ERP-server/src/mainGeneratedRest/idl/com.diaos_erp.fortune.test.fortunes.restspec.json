@@ -1,0 +1,20 @@
+{
+  "name" : "fortunes",
+  "namespace" : "com.diaos_erp.fortune.test",
+  "path" : "/fortunes",
+  "schema" : "com.diaos_erp.fortune.test.Fortune",
+  "doc" : "Very simple Rest.li Resource that serves up a fortune cookie.\n\ngenerated from: com.diaos_erp.fortune.test.impl.FortunesResource",
+  "collection" : {
+    "identifier" : {
+      "name" : "fortunesId",
+      "type" : "long"
+    },
+    "supports" : [ "get" ],
+    "methods" : [ {
+      "method" : "get"
+    } ],
+    "entity" : {
+      "path" : "/fortunes/{fortunesId}"
+    }
+  }
+}
