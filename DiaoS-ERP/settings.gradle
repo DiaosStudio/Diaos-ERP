@@ -1,2 +1,3 @@
+include 'DiaoS-ERP-core'
 include 'DiaoS-ERP-api'
 include 'DiaoS-ERP-server'

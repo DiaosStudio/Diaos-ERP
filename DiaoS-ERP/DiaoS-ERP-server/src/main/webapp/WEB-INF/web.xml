@@ -22,6 +22,7 @@
 		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 
+<!--
 	<filter>
 		<filter-name>administratorFilter</filter-name>
 		<filter-class>com.lzkj.filter.urlFilter</filter-class>
@@ -32,4 +33,5 @@
 		<filter-name>urlFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
+	-->
 </web-app>
