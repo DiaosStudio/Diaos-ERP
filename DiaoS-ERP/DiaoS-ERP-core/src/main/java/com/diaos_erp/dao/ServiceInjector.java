@@ -13,17 +13,32 @@ public class ServiceInjector {
 
 	public static Injector getInjector() {
 		if (null == injector) {
-			injector = Guice.createInjector(new XMLMyBatisModule() {
-				@Override
-				protected void initialize() {
-					setEnvironmentId("staff.development");
-					setClassPathResource("com/diaos_erp/dao/env/mybatis-staff.xml");
-					// addProperties(getProperties());
+			injector = Guice.createInjector(
+			//
+					new XMLMyBatisModule() {
+						@Override
+						protected void initialize() {
+							setEnvironmentId("staff.development");
+							setClassPathResource("com/diaos_erp/dao/env/mybatis-staff.xml");
+							// addProperties(getProperties());
 
-					bind(DaoTestIf.class).to(DaoTestImpl.class).in(
-							Scopes.SINGLETON);
-				}
-			});
+							bind(DaoTestIf.class).to(DaoTestImpl.class).in(
+									Scopes.SINGLETON);
+							
+						}
+					},
+					// 内存库
+					new XMLMyBatisModule() {
+						@Override
+						protected void initialize() {
+							setEnvironmentId("session.development");
+							setClassPathResource("com/diaos_erp/dao/env/mybatis-staff.xml");
+							// addProperties(getProperties());
+
+							bind(DaoTestIf.class).to(DaoTestImpl.class).in(
+									Scopes.SINGLETON);
+						}
+					});
 		}
 
 		return injector;

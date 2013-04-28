@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties">
+		<property name="staff.username" value="root" />
+		<property name="staff.password" value="wanghan" />
+		<property name="staff.driver" value="com.mysql.jdbc.Driver" />
+		<property name="staff.address" value="localhost" />
+		<property name="staff.port" value="3306" />
+	</properties>
+	<environments default="staff.development">
+		<environment id="staff.development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${staff.driver}" />
+				<property name="url"
+					value="jdbc:mysql://${staff.address}:${staff.port}/${staff.schema}?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />
+				<property name="username" value="${staff.username}" />
+				<property name="password" value="${staff.password}" />
+
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/diaos_erp/dao/mapper/StaffDaoMapper.xml" />
+	</mappers>
+</configuration>

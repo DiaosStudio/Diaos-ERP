@@ -1,9 +1,0 @@
-apply plugin: 'pegasus'
-
-dependencies {
-	compile spec.product.pegasus.restliClient
-	dataTemplateCompile spec.product.pegasus.data
-	dataTemplateGenerator spec.product.pegasus.generator
-	restClientCompile spec.product.pegasus.restliClient
-	restTools spec.product.pegasus.restliTools
-}
