@@ -1,4 +1,10 @@
 
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+	}
+}
+
 dependencies {
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.24'
 	compile group: 'org.hsqldb', name: 'hsqldb', version: '2.2.9'

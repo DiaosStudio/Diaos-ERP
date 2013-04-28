@@ -1,0 +1,10 @@
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+    }
+}
+
+dependencies {
+	compile group: 'org.restlet.jse', name: 'org.restlet.ext.oauth', version: '2.1-SNAPSHOT'
+}
