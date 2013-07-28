@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.diaos_erp.oauth.dao.mapper.ClientInfoMapper">
+	<select id="selectTest" parameterType="String"
+		resultType="com.diaos_erp.oauth.client.DiaosClientInfo">
+		select *
+		from Client where clientId = #{clientId}
+	</select>
+	<insert id="createNew" parameterType="com.diaos_erp.oauth.client.DiaosClientInfo"
+		flushCache="true" statementType="PREPARED" keyProperty="" timeout="20000">
+		insert into Client (clientId,clientSecret,redirectUri,applicationName)
+		values
+		(#{clientId},#{clientSecret},#{redirectUri},#{applicationName})
+	</insert>
+</mapper>

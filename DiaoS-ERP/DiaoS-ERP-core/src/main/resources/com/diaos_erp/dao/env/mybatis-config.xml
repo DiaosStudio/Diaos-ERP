@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties">
+		<property name="config.username" value="root" />
+		<property name="config.password" value="" />
+		<property name="config.driver" value="com.mysql.jdbc.Driver" />
+		<property name="config.address" value="localhost" />
+		<property name="config.port" value="3306" />
+	</properties>
+	<environments default="config.development">
+		<environment id="config.development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${config.driver}" />
+				<property name="url"
+					value="jdbc:mysql://${config.address}:${config.port}/${config.schema}?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull" />
+				<property name="username" value="${config.username}" />
+				<property name="password" value="${config.password}" />
+
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/diaos_erp/dao/mapper/StartUpDaoMapper.xml" />
+	</mappers>
+</configuration>

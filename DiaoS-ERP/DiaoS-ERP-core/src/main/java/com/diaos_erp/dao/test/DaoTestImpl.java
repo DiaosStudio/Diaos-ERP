@@ -18,6 +18,7 @@ public class DaoTestImpl implements DaoTestIf {
 	@Override
 	@Transactional
 	public DaoTestDO getDO(int id) {
-		return session.selectOne("com.diaos_erp.dao.test.DaoTestMapper.selectTest", id);
+		return session.selectOne(
+				"com.diaos_erp.dao.test.DaoTestMapper.selectTest", id);
 	}
 }

@@ -1,0 +1,4 @@
+itemCode,itemName,idx,cls,method,isApp,url,remark
+plugins,"Client Plugins",1,com.diaos_erp.plugins.PluginsApplication,NULL,true,/client,NULL
+oauth,OAuth,2,com.diaos_erp.oauth.app.OAuthApplication,NULL,true,/oauth,NULL
+test,"Test Client",99,test.client.ClientApplication,NULL,true,/test,NULL
